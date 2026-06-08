@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucky Wheel</title>
+</head>
+<body>
+    <h1>Welcome to My Lucky Wheel</h1>
+
+    <button onclick="spinWheel()">Spin</button>
+
+    <p id="result"></p>
+
+    <script>
+        function spinWheel() {
+            let prizes = [
+                "$70",
+                "$150",
+                "₦100",
+                "₦500",
+                "₦1000",
+                "Try Again"
+            ];
+
+            let result =
+                prizes[Math.floor(Math.random() * prizes.length)];
+
+            if (result === "Try Again") {
+                document.getElementById("result").innerHTML =
+                    "You lost. Try again!";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "You won: " + result;
+            }
+        }
+    </script>
+</body>
+</html>
